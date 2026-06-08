@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食物抽選器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ 食物抽選器</h1>
+            <p>幫助您決定吃什麼</p>
+        </div>
+
+        <div class="main-section">
+            <div class="picker-section">
+                <h2>隨機抽選</h2>
+                <div class="controls">
+                    <label for="selectCount">選擇幾個選項：</label>
+                    <input type="number" id="selectCount" min="1" max="10" value="1">
+                </div>
+                <button id="pickBtn" class="btn btn-primary">🎲 抽選食物</button>
+            </div>
+
+            <div class="results-section">
+                <h2>抽選結果</h2>
+                <div id="results" class="results">
+                    <p class="placeholder">點擊「抽選食物」按鈕開始</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-section">
+            <h2>食物清單</h2>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="default">預設食物</button>
+                <button class="tab-btn" data-tab="custom">自訂食物</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="default-tab" class="tab-pane active">
+                    <div id="defaultList" class="food-list"></div>
+                </div>
+                
+                <div id="custom-tab" class="tab-pane">
+                    <div class="add-food">
+                        <input type="text" id="foodInput" placeholder="輸入新食物" maxlength="30">
+                        <button id="addBtn" class="btn btn-secondary">✚ 新增</button>
+                    </div>
+                    <div id="customList" class="food-list"></div>
+                </div>
+            </div>
+
+            <button id="resetBtn" class="btn btn-danger">🔄 重設</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
